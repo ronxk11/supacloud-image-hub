@@ -1,0 +1,120 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  :root {
+    --background: 220 20% 6%;
+    --foreground: 210 20% 92%;
+
+    --card: 220 18% 10%;
+    --card-foreground: 210 20% 92%;
+
+    --popover: 220 18% 10%;
+    --popover-foreground: 210 20% 92%;
+
+    --primary: 153 68% 53%;
+    --primary-foreground: 220 20% 6%;
+
+    --secondary: 220 16% 16%;
+    --secondary-foreground: 210 20% 85%;
+
+    --muted: 220 14% 14%;
+    --muted-foreground: 215 12% 50%;
+
+    --accent: 153 50% 20%;
+    --accent-foreground: 153 68% 70%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 14% 18%;
+    --input: 220 14% 18%;
+    --ring: 153 68% 53%;
+
+    --radius: 0.75rem;
+
+    --glow-primary: 153 68% 53%;
+    --glow-intensity: 0.15;
+
+    --sidebar-background: 220 18% 8%;
+    --sidebar-foreground: 210 20% 85%;
+    --sidebar-primary: 153 68% 53%;
+    --sidebar-primary-foreground: 220 20% 6%;
+    --sidebar-accent: 220 14% 14%;
+    --sidebar-accent-foreground: 210 20% 85%;
+    --sidebar-border: 220 14% 18%;
+    --sidebar-ring: 153 68% 53%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  code, .font-mono {
+    font-family: 'JetBrains Mono', monospace;
+  }
+}
+
+@layer utilities {
+  .glow-primary {
+    box-shadow: 0 0 20px hsl(153 68% 53% / 0.2),
+                0 0 60px hsl(153 68% 53% / 0.1),
+                inset 0 1px 0 hsl(153 68% 53% / 0.1);
+  }
+
+  .glow-primary-lg {
+    box-shadow: 0 0 30px hsl(153 68% 53% / 0.3),
+                0 0 80px hsl(153 68% 53% / 0.15),
+                0 0 120px hsl(153 68% 53% / 0.05);
+  }
+
+  .glass {
+    backdrop-filter: blur(16px) saturate(180%);
+    background: hsl(220 18% 10% / 0.7);
+    border: 1px solid hsl(220 14% 18% / 0.8);
+  }
+
+  .glass-hover {
+    backdrop-filter: blur(16px) saturate(180%);
+    background: hsl(220 18% 12% / 0.8);
+    border: 1px solid hsl(153 68% 53% / 0.2);
+  }
+
+  .text-gradient-primary {
+    background: linear-gradient(135deg, hsl(153 68% 53%), hsl(153 68% 70%));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .bg-grid {
+    background-image: 
+      linear-gradient(hsl(220 14% 18% / 0.5) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(220 14% 18% / 0.5) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .bg-dots {
+    background-image: radial-gradient(circle, hsl(220 14% 25%) 1px, transparent 1px);
+    background-size: 24px 24px;
+  }
+
+  .border-glow {
+    border: 1px solid hsl(153 68% 53% / 0.3);
+  }
+
+  .drop-zone-active {
+    border-color: hsl(153 68% 53% / 0.6);
+    background: hsl(153 68% 53% / 0.05);
+  }
+}
